@@ -11,7 +11,7 @@ class Player:
         self.armor_class = armor_class
         self.hp = hp
         self.gold = gold
-        self.items = [] # anything that isnt a weapon/armor
+        self.items = []  # anything that isnt a weapon/armor
         self.weapons = []
         self.armor = []
 
@@ -26,7 +26,8 @@ class Player:
 
     def display_attack_options(self):
         for i in range(len(self.weapons)):
-            print(f'{i+1}. {self.weapons[i]}')
+            print(f'{i + 1}. {self.weapons[i]}')
+
 
 class Warrior(Player):
     def __init__(self, name='Adventurer', hp=15, armor_class=10):
@@ -39,4 +40,3 @@ class Warrior(Player):
         to_hit = random.randint(1, 20)
         attack_damage = random.randint(0, 6)
         return to_hit, attack_damage
-
