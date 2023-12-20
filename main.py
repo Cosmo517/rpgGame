@@ -1,10 +1,7 @@
 from player import *
 from dungeon import *
-from tiles import *
-import json
 import keyboard
-import time
-import os
+
 
 
 def print_classes():
@@ -36,15 +33,20 @@ subclasses = [['Thief', 'Knight'], [''], ['Priest', 'Necromancer']]
 # if user_class_selection == 'Warrior':
 #     player_character = Warrior(user_name)
 
-test_maze = Dungeon(15, 15)
+player_character = Warrior("test")
+
+test_maze = Dungeon(player_character, 15, 15, )
 test_maze.square_room()
 test_maze.insert_player(4, 4)
 test_maze.print_map()
 
+# Simple game loop for capturing player input
 while True:
     event = keyboard.read_event()
     if event.event_type == keyboard.KEY_DOWN:
         test_maze.handle_player_movement(event.name)
+        test_maze.handle_enemy_actions()
+
 
 # testing for json stuff
 
