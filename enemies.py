@@ -10,9 +10,11 @@ class Enemy:
         self.movement_modifier = 1  # number of spaces to move during one turn
 
     def basic_attack(self):
+        """Basic attack for an enemy"""
         pass
 
     def get_display_char(self):
+        """Returns the display character for an enemy"""
         return self.display_char
 
 
